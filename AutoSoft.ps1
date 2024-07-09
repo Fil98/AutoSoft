@@ -1,3 +1,9 @@
-# Для выполнения сценариев PowerShell ввести ----- Set-ExecutionPolicy RemoteSigned
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-choco install thunderbird git telegram flameshot taskbarx winrar GoogleChrome VisualStudioCode -y
+# Установка политики выполнения сценариев PowerShell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+# Установка Chocolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+# Установка необходимых приложений с помощью Chocolatey
+choco install thunderbird git telegram flameshot taskbarx winrar googlechrome visualstudiocode -y
